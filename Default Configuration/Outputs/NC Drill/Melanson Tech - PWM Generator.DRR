@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: Melanson Tech - PWM Generator.CSPcbDoc   4/6/2024  10:22:24 AM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII Plated RoundHoles File : Melanson Tech - PWM Generator-Plated.TXT
+EIA File   : Melanson Tech - PWM Generator.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.3mm (11.811mil)        Round          24               115.14 mm (4.53 Inch)
+T2        0.65mm (25.591mil)       Round          6                29.00 mm (1.14 Inch)
+T3        1mm (39.37mil)           Round          4                7.62 mm (0.30 Inch)
+T4        1.016mm (40mil)          Round          6                12.70 mm (0.50 Inch)
+---------------------------------------------------------------------------
+Totals                                            40               164.46 mm (6.47 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

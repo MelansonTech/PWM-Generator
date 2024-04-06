@@ -1,0 +1,26 @@
+Change Component DesignItemId : Designator=C4 Old DesignItemId=Cap,0805,10nF,±10%,25Vdc,C0805X102J1GACAUTO New DesignItemId=CAP,0805,Generic
+Change Component DesignItemId : Designator=R8 Old DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA New DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA
+Change Component DesignItemId : Designator=R10 Old DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA New DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA
+Change Component DesignItemId : Designator=R11 Old DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA New DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA
+Change Component DesignItemId : Designator=R13 Old DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA New DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA
+Change Component DesignItemId : Designator=R14 Old DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA New DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA
+Change Component DesignItemId : Designator=R17 Old DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA New DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA
+Change Component DesignItemId : Designator=R19 Old DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA New DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA
+Change Component DesignItemId : Designator=R18 Old DesignItemId=Res,0805,1MegO,5%,200ppm,0805W8F1005T5E New DesignItemId=Res,0805,1MegO,5%,200ppm,0805W8F1005T5E
+Change Component DesignItemId : Designator=R1 Old DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA New DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA
+Change Component DesignItemId : Designator=R4 Old DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA New DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA
+Change Component DesignItemId : Designator=R5 Old DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA New DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA
+Change Component DesignItemId : Designator=R7 Old DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA New DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA
+Change Component DesignItemId : Designator=R16 Old DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA New DesignItemId=Res,0805,10.0kO,1%,100 ppm,CRCW080510K0FKTA
+Change Component DesignItemId : Designator=R6 Old DesignItemId=Res,0805,10.0O,5%,±200ppm/°C,RMCF0805JT10R0 New DesignItemId=Res,0805,10.0O,5%,±200ppm/°C,RMCF0805JT10R0
+Change Component DesignItemId : Designator=R12 Old DesignItemId=Res,0805,221O,1%,100ppm,CRCW0805221RFKTA New DesignItemId=Res,0805,221O,1%,100ppm,CRCW0805221RFKTA
+Change Component DesignItemId : Designator=R15 Old DesignItemId=Res,0805,221O,1%,100ppm,CRCW0805221RFKTA New DesignItemId=Res,0805,221O,1%,100ppm,CRCW0805221RFKTA
+Change Component DesignItemId : Designator=R3 Old DesignItemId=res,0805,470O,5%,200ppm,CR0805-JW-471ELF New DesignItemId=Res,0805,1.00 kO,5%,200ppm,CRCW08051K00JNEA
+Change Component DesignItemId : Designator=R2 Old DesignItemId=Res,POT,TH,10KO,0.5W,±10%,±100ppm/°C,CT94EW103 New DesignItemId=Res,POT,TH,10KO,0.5W,±10%,±100ppm/°C,CT94EW103
+Change Component DesignItemId : Designator=R9 Old DesignItemId=Res,POT,TH,10KO,0.5W,±10%,±100ppm/°C,CT94EW103 New DesignItemId=Res,POT,TH,10KO,0.5W,±10%,±100ppm/°C,CT94EW103
+Change Component Footprint: Designator=C4 Old Footprint=Cap,0805 New Footprint=CAP, 0805, HD
+Change Component Comment : Designator=C4 Old Comment=C0805X102J1GACAUTO New Comment=2.2nf
+Change Component Comment : Designator=R3 Old Comment=CR0805-JW-471ELF New Comment=Vishay CRCW08051K00JNEA
+Change Component Description : Designator=R3 Old Description=RES SMD 470 OHM 5% 1/8W 0805 New Description=Res Thick Film 0805 1K Ohm 5% 0.125W(1/8W) ±200ppm/C Molded SMD Automotive Paper T/R
+Change Component Library : Designator=R3 Old Library=Master Mar2021.SchLib New Library=Master JULY2019.SchLib
+Change Class Name : Old Net Name=PWM Generator Rev 2-2-3 New Net Name=Melanson Tech - PWM Generator
