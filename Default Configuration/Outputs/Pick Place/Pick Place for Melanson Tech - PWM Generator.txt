@@ -6,7 +6,7 @@ R16        res,_0805,_HD          -2.3mm       14.25mm        -2.3mm       14.25
 C1         Cap,0805              -18.6mm         6.9mm       -18.6mm         6.9mm       -18.6mm        5.95mm  B         90.00 08055C104JAT2A 
 C2         Cap,0805           -22.1251mm        13.9mm     -22.125mm        13.9mm     -21.175mm        13.9mm  B        180.00 CL21A106KQFNNNG
 C3         Cap,0805           -22.1251mm      11.375mm     -22.125mm      11.375mm     -21.175mm      11.375mm  B        180.00 08055C104JAT2A 
-C4         Cap,0805            -15.218mm     19.7534mm     -15.218mm     19.7534mm     -15.218mm     18.8034mm  B         90.00 C0805X102J1GACAUTO
+C4         CAP,_0805,_HD       -15.218mm     19.7534mm     -15.218mm     19.7534mm     -15.218mm     18.7374mm  B         90.00 2.2nf          
 C5         Cap,0805            -12.504mm       19.75mm     -12.504mm       19.75mm     -12.504mm        18.8mm  B         90.00 08055C104JAT2A 
 C6         Cap,0805            -17.866mm       19.75mm     -17.866mm       19.75mm     -17.866mm        18.8mm  B         90.00 08055C104JAT2A 
 C7         Cap,0805             -9.806mm       19.75mm      -9.806mm       19.75mm      -9.806mm        18.8mm  B         90.00 CL21A106KQFNNNG
@@ -19,7 +19,7 @@ Q3         SOT23-3                -2.5mm        7.25mm        -2.5mm        7.25
 Q4         SOT23-3               -6.25mm        7.25mm       -6.25mm        7.25mm     -5.1912mm      8.2076mm  B         90.00 MMBT2907A-7-F  
 R1         res,_0805,_HD         -18.2mm        16.3mm       -18.2mm        16.3mm      -17.25mm        16.3mm  B        180.00 Vishay / Dale CRCW080510K0FKTA
 R2         Res,TH,POT,TopAdj         -22mm        22.5mm         -22mm        22.5mm         -22mm          20mm  B        270.00 CT94EW103      
-R3         res,_0805,_HD          -2.3mm        16.3mm        -2.3mm        16.3mm       -1.35mm        16.3mm  B        180.00 CR0805-JW-471ELF
+R3         res,_0805,_HD          -2.3mm        16.3mm        -2.3mm        16.3mm       -1.35mm        16.3mm  B        180.00 Vishay CRCW08051K00JNEA
 R4         res,_0805,_HD          -6.2mm        12.1mm        -6.2mm        12.1mm       -7.15mm        12.1mm  B        360.00 Vishay / Dale CRCW080510K0FKTA
 R5         res,_0805,_HD         -22.2mm        16.3mm       -22.2mm        16.3mm      -23.15mm        16.3mm  B        360.00 Vishay / Dale CRCW080510K0FKTA
 R6         res,_0805,_HD         -11.2mm         6.3mm       -11.2mm         6.3mm       -11.2mm        5.35mm  B         90.00 RMCF0805JT10R0 

@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 11:27:19 AM On 4/6/2024
+
+Output: ExportSTEP
+Type  : ExportSTEP
+From  : Variant [[No Variations]] of PCB Document [Melanson Tech - PWM Generator.CSPcbDoc]
+   Generated File[Melanson Tech - PWM Generator.step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:27:23 AM On 4/6/2024
