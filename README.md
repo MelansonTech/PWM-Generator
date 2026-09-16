@@ -128,4 +128,16 @@ files by hand.
 
 ## License
 
-[MIT](LICENSE) — Copyright (c) 2024 MelansonTech.
+**CERN Open Hardware Licence Version 2 — Strongly Reciprocal (`CERN-OHL-S-2.0`).**
+
+Copyright © 2024–2026 MelansonTech (Shawn Melanson).
+
+This source describes Open Hardware and is licensed under CERN-OHL-S v2. You may redistribute
+and modify it under the terms of that licence. This source is distributed *WITHOUT ANY EXPRESS
+OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A
+PARTICULAR PURPOSE.* Please see the licence for applicable conditions.
+
+In short: you may build, modify and sell this design, but if you distribute a modified version —
+or a product made from one — you must publish your modified source under the same licence.
+
+The full licence text is in [`LICENSE`](LICENSE), or at <https://cern.ch/cern-ohl>.
