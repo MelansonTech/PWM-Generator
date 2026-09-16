@@ -1,19 +1,131 @@
-# PWM-Generator
-Comparator based PWM Generator
-Project Title: LM393 Comparator-Based Low-Cost PWM Generator
-Overview:
-The LM393 Comparator-Based Low-Cost PWM Generator is an open-source electronics project designed for precise Pulse Width Modulation (PWM) signal generation. This budget-friendly solution features a wide input voltage range (5V to 15V DC), three selectable frequency ranges, and a soft-start mechanism. Additionally, it is equipped with a push-pull amplifier on the output, enabling the driving of loads up to 100mA without compromising cost efficiency.
-Project Summary:
-The PWM generator, based on the LM393 dual comparator, offers versatile frequency options (15Hz to 100Hz, 1.5kHz to 10kHz, and 55kHz to 300kHz) and operates from 0 to 100 percent duty cycle. The integration of a push-pull amplifier enhances its capabilities, allowing for the reliable driving of loads with a current requirement of up to 100mA, all while maintaining a low-cost profile.
-Design and Implementation:
-The LM393 Comparator-Based Low-Cost PWM Generator is meticulously designed to ensure optimal performance and cost-effectiveness.
-Hardware:
-In addition to the LM393 comparator, the circuit features a cost-effective push-pull amplifier at the output stage. This amplifier, composed of specific components chosen for affordability, empowers the PWM generator to drive loads up to 100mA with efficiency. The hardware design, including the amplifier configuration, is documented thoroughly in the project materials.
-Challenges and Solutions:
-Overcoming challenges in the integration of the push-pull amplifier while maintaining a low-cost solution required careful consideration of component selection. Through iterative testing and adjustments, the final design achieved a balance between performance, reliability, and affordability.
-Testing and Validation:
-Extensive testing was conducted to validate the performance of the PWM generator, with a focus on the push-pull amplifier's ability to drive loads up to 100mA. The results confirmed the generator's reliability and stability across varying conditions, highlighting its suitability as a low-cost solution.
-Results and Impact:
-The LM393 Comparator-Based Low-Cost PWM Generator, with its push-pull amplifier, stands out as an affordable and versatile tool for applications demanding precise PWM signals and the ability to drive moderate loads. The project's impact extends to electronic enthusiasts, hobbyists, and professionals seeking a cost-effective solution for motor control, lighting systems, and other applications.
-Conclusion:
-This project stands as a testament to successful hardware integration, offering a feature-rich PWM generator with a robust push-pull amplifier, all within a low-cost framework. The knowledge gained from this project contributes to the broader understanding of analog electronics and microcontroller interfacing, emphasizing the potential for innovation on a budget.
+# PWM Generator
+
+A low-cost, adjustable PWM signal generator built around an LM393 dual comparator.
+One half of the comparator runs a sawtooth oscillator, the other slices it against an
+adjustable threshold, and a discrete push-pull follower drives the output to 100 mA.
+
+No microcontroller, no firmware — two trimmers and a jumper.
+
+Complete CircuitStudio design: schematic, PCB, and a released manufacturing package
+(Gerbers, NC drill, pick & place, BOM, STEP).
+
+---
+
+## Specifications
+
+| | |
+|---|---|
+| Supply voltage | 5 – 15 V DC |
+| Output current | up to 100 mA |
+| Output swing | GND to the input rail, less the input diode drop and one V<sub>BE</sub> |
+| Duty cycle | 0 – 100 %, set by trimmer R2 |
+| Frequency | 15 Hz – 300 kHz across three jumper-selected ranges |
+| Soft start | duty ramps up from zero on power-up (C6) |
+| Shutdown | active-high SD input forces 0 % duty |
+| Board | 25.0 × 28.0 mm (0.98 × 1.10 in), 2-layer |
+| Assembly | SMD on the bottom side only, plus 4 through-hole parts |
+| Placements | 40 (19 unique parts, C18 not populated) |
+
+## Frequency ranges
+
+Range is selected by jumpering one pair on **J2**, which switches the oscillator's
+timing capacitor:
+
+| J2 jumper | Timing cap | Range |
+|---|---|---|
+| 1 – 2 | C4, 2.2 nF | 55 kHz – 300 kHz |
+| 3 – 4 | C5, 100 nF | 1.5 kHz – 10 kHz |
+| 5 – 6 | C7, 10 µF | 15 Hz – 120 Hz |
+
+Within a range, **R9** sets the frequency. Exactly one pair should be jumpered at a time.
+
+## Connections
+
+**J1** — 1×4, 0.1 in pitch:
+
+| Pin | Net | Description |
+|---|---|---|
+| 1 | `PWM_OUT` | PWM output, up to 100 mA |
+| 2 | `Vin` | 5 – 15 V DC supply |
+| 3 | `GND` | Ground |
+| 4 | `SD` | Shutdown, active high — forces 0 % duty. Leave open or tie to GND for normal operation |
+
+## Adjustments
+
+| Part | Function |
+|---|---|
+| R9 | Frequency, within the range selected by J2 |
+| R2 | Duty cycle |
+| C6 | Soft-start time constant — increase for a slower ramp, decrease for a faster one |
+
+Both are 10 kΩ top-adjust trimmers (CT94EW103).
+
+## How it works
+
+- **Input** — Vin enters through D1 (MBR0560 Schottky) for reverse-polarity protection.
+  U1, an HT7550-1 SOT-89 LDO, derives the +5 V rail that the comparator and timing
+  network run from. The output stage runs from the input rail, not the 5 V rail, so the
+  PWM output swings as high as the supply allows.
+- **Sawtooth oscillator** — One half of U2 (LM393) charges the selected timing capacitor
+  through R9 and discharges it at a fixed reference, producing a 0 – 2.5 V sawtooth.
+  J2 picks the capacitor and therefore the range; R9 sets the charge current and
+  therefore the frequency.
+- **PWM comparator** — The other half of U2 compares the sawtooth against a DC control
+  voltage from R2. Where the control voltage sits within the sawtooth's 0 – 2.5 V span
+  is the duty cycle.
+- **Soft start** — C6 sits on the control node and charges through R5 at power-up, so
+  the control voltage ramps from 0 V and the duty cycle ramps with it.
+- **Shutdown** — Driving SD high turns on Q5, which pulls the control node to ground and
+  holds the output at 0 % duty.
+- **Output stage** — Q3 (NPN, SMBT2222A) and Q4 (PNP, MMBT2907A) form a complementary
+  emitter follower. R6 (10 Ω) is in series with the output and R14 (1 kΩ) pulls it down.
+
+Key parts: **U2** LM393DT · **U1** HT7550-1 · **Q1–Q3, Q5** SMBT2222A · **Q4** MMBT2907A-7-F · **D1** MBR0560
+
+## Repository layout
+
+```
+Melanson Tech - PWM Generator.PrjPcb      CircuitStudio project
+Melanson Tech - PWM Generator.SchDoc      Schematic
+Melanson Tech - PWM Generator.CSPcbDoc    PCB layout
+PWM Generator Rev 1.OutJob                Output job - regenerates everything below
+
+Default Configuration/Outputs/
+  PWM Generator Rev 1.PDF                 Schematic and PCB drawings
+  Gerber/                                 RS-274X, 2 layers, bottom-side assembly
+  NC Drill/                               Excellon drill files and drill report
+  Pick Place/                             Placement data, .csv and .txt
+  BOM/                                    Bill of materials with Digi-Key part numbers
+  ExportSTEP/                             3D model of the assembled board
+```
+
+## Opening the design
+
+Open `Melanson Tech - PWM Generator.PrjPcb` in Altium CircuitStudio (the outputs here
+were generated with 1.5.2) or in Altium Designer, which reads the same formats.
+
+The project's library search path points at a local folder, so schematic symbols and
+footprints may not resolve on another machine. The design files themselves carry
+everything needed to view, plot, and fabricate the board — the libraries are only
+required to edit components or re-run an ECO.
+
+## Ordering boards
+
+The manufacturing package under `Default Configuration/Outputs/` was generated on
+2024-04-06 and is what you send to a fab house:
+
+- **Gerbers** — RS-274X, metric, 2 layers (`.GTL` top copper, `.GBL` bottom copper),
+  with `.Outline` as the board outline
+- **Drill** — `.DRL` (Excellon) plus `.DRR`; 40 plated holes, 4 tools, smallest 0.3 mm
+- **Assembly** — pick & place plus the `.GBP` bottom paste layer. Every SMD part is on
+  the bottom side, so this is a single-sided reflow. J1, J2 and the two trimmers are
+  through-hole.
+- **BOM** — `BOM_PartType-Melanson Tech - PWM Generator.xls`, with Digi-Key part numbers
+  for most line items. C18 is marked **DNP** — do not populate.
+
+If you change the design, re-run `PWM Generator Rev 1.OutJob` rather than editing these
+files by hand.
+
+## License
+
+[MIT](LICENSE) — Copyright (c) 2024 MelansonTech.

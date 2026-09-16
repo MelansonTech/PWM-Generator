@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# CircuitStudio / Altium Designer
+#
+# Tracked: the design sources (.PrjPcb, .SchDoc, .CSPcbDoc, .OutJob) and the
+# released manufacturing package under "Default Configuration/Outputs/".
+# Ignored: everything CircuitStudio regenerates or that only describes this
+# machine.
+# ---------------------------------------------------------------------------
+
+# Local backup snapshots and logs written by CircuitStudio
+History/
+__Previews/
+Logs/
+Project Logs*/
+*.PrjPcbStructure
+*.Dat
+
+# Per-output run state - records local absolute paths, no design value
+*.OutputStatus
+Status Report.Txt
+
+# Editor and tool scratch files
+*.~(*)*
+*.bak
+*.tmp
+*.$$$
+~$*
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store
