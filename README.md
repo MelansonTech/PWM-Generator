@@ -9,6 +9,11 @@ No microcontroller, no firmware — two trimmers and a jumper.
 Complete CircuitStudio design: schematic, PCB, and a released manufacturing package
 (Gerbers, NC drill, pick & place, BOM, STEP).
 
+![Schematic of the LM393 PWM generator](docs/schematic.png)
+
+<sub>Full-size schematic, PCB drawings and 3D views:
+[`PWM Generator Rev 1.PDF`](Default%20Configuration/Outputs/PWM%20Generator%20Rev%201.PDF)</sub>
+
 ---
 
 ## Specifications
@@ -79,6 +84,8 @@ Both are 10 kΩ top-adjust trimmers (CT94EW103).
   holds the output at 0 % duty.
 - **Output stage** — Q3 (NPN, SMBT2222A) and Q4 (PNP, MMBT2907A) form a complementary
   emitter follower. R6 (10 Ω) is in series with the output and R14 (1 kΩ) pulls it down.
+- **Indicator** — D2, a green LED, sits across the output through R7 (10 kΩ), so its
+  brightness follows the duty cycle.
 
 Key parts: **U2** LM393DT · **U1** HT7550-1 · **Q1–Q3, Q5** SMBT2222A · **Q4** MMBT2907A-7-F · **D1** MBR0560
 
@@ -89,6 +96,8 @@ Melanson Tech - PWM Generator.PrjPcb      CircuitStudio project
 Melanson Tech - PWM Generator.SchDoc      Schematic
 Melanson Tech - PWM Generator.CSPcbDoc    PCB layout
 PWM Generator Rev 1.OutJob                Output job - regenerates everything below
+
+docs/schematic.png                        Schematic image used above
 
 Default Configuration/Outputs/
   PWM Generator Rev 1.PDF                 Schematic and PCB drawings
@@ -128,4 +137,16 @@ files by hand.
 
 ## License
 
-[MIT](LICENSE) — Copyright (c) 2024 MelansonTech.
+**CERN Open Hardware Licence Version 2 — Strongly Reciprocal (`CERN-OHL-S-2.0`).**
+
+Copyright © 2024–2026 MelansonTech (Shawn Melanson).
+
+This source describes Open Hardware and is licensed under CERN-OHL-S v2. You may redistribute
+and modify it under the terms of that licence. This source is distributed *WITHOUT ANY EXPRESS
+OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A
+PARTICULAR PURPOSE.* Please see the licence for applicable conditions.
+
+In short: you may build, modify and sell this design, but if you distribute a modified version —
+or a product made from one — you must publish your modified source under the same licence.
+
+The full licence text is in [`LICENSE`](LICENSE), or at <https://cern.ch/cern-ohl>.
